@@ -47,7 +47,7 @@
 
 9. 修改目录权限：
 
-    ```sudo chown -Rf xxx:xxx /home/xxx```
+    ```sudo chown -R xxx:xxx /home/xxx```
 
 10. 编辑 /etc/fstab 文件, 设置自动挂载：
 
