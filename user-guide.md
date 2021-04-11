@@ -47,7 +47,7 @@ zylab-xxx
     `-- user2
         |-- user2's envs/src files
         `-- data
-        |   |-- user2's data files
+            |-- user2's data files
 ```
 
 账号初始空间：     
