@@ -2,7 +2,7 @@
 
 USERNAME=${1:-""}
 PASSWORD=${2:-""}
-HOME_VOLUME_SIZE=${3:-"20G"}
+HOME_VOLUME_SIZE=${3:-"50G"}
 DATA_VOLUME_SIZE=${4:-"100G"}
 
 set -e
@@ -50,7 +50,7 @@ mount /dev/data-vg/${DATA_VL} /home/${USERNAME}/data
 # Copy template to home
 cp -RT /etc/skel /home/${USERNAME}
 # Change owner
-chown -Rf ${USERNAME}:${USERNAME} /home/${USERNAME}
+chown -R ${USERNAME}:${USERNAME} /home/${USERNAME}
 
 # Auto mount
 echo "/dev/ubuntu-vg/${HOME_VL} /home/${USERNAME} ext4 defaults 0 0" >> /etc/fstab
