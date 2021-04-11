@@ -7,7 +7,7 @@
 
 ## 添加用户=USERNAME并分配空间流程
 
-1. 从ubuntu-vg中为该用户创建一个逻辑卷（LV）作为用户目录，大小为：```HOME_VOLUME_SIZE=20GB```:
+1. 从ubuntu-vg中为该用户创建一个逻辑卷（LV）作为用户目录，大小为：```HOME_VOLUME_SIZE=50GB```:
 
    ```sudo lvcreate -L ${HOME_VOLUME_SIZE} -n home-${USERNAME} ubuntu-vg```
 
