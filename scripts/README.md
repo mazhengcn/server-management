@@ -8,9 +8,9 @@ To add a user, copy ```add-user.sh``` to any directory on the server and run:
 
 ```sudo bash add-user.sh "username" "password"``` 
 
-Make sure to delete this record in ```~/.bash_history``` or change the password for security.
+If you want to have other initial size of the user's directories, add "xxG" (size of home, unit 'G') "xxG" (size of data, unit 'G') to the end.
 
-To delet a user, run
+To delete a user, run
 
 ``` sudo bash delete-user.sh "username"```
 
