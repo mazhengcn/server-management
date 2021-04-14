@@ -79,6 +79,7 @@ zylab-xxx
 - 竺烨锟：zhuyekun123@sjtu.edu.cn
 - 王志伟：victorywzw@sjtu.edu.cn
 - 张众望：0123zzw666@sjtu.edu.cn
+- 周瀚旭：1210123652@sjtu.edu.cn
 
 
 ## 3. 注意事项
