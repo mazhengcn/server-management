@@ -56,7 +56,7 @@ Docker 包括三个基本概念：
    ```
 3. 修改环境变量
    
-   修改环境变量可以使得用户可以通过ssh连接服务器并使用docker。如果想在本地链接上远程服务器的docker并使用。可以跳过这个部分，转到![配置本地使用远程 Docker 服务](https://github.com/mazhengcn/server-management/edit/main/docker.md#%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B-docker-%E6%9C%8D%E5%8A%A1)。
+   修改环境变量可以使得用户可以通过ssh连接服务器并使用docker。如果想在本地链接上远程服务器的docker并使用。可以跳过这个部分，转到[配置本地使用远程 Docker 服务](https://github.com/mazhengcn/server-management/blob/main/docker.md#%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B-docker-%E6%9C%8D%E5%8A%A1)。
    
    进入~/.bashrc中，添加环境变量。
    ```bash
