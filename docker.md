@@ -40,7 +40,7 @@ Docker 包括三个基本概念：
 
 通常运行 Docker 需要用户具有 root (或属于 docker 用户组，具有等同于 root 的权限) 权限，这导致运行 docker 会有一些潜在的风险，而 rootless mode 允许以非 root 用户身份运行。
 
-1. 安装 Rootless mode (ZYLab 服务器上已预装，此步可跳过)
+1. 安装 Rootless mode
 
    如果安装的 Docker 20.10 或者是更新的版本，在 `/usr/bin` 有 rootless mode 的安装脚本 `dockerd-rootless-setuptool.sh`。
 
@@ -54,8 +54,21 @@ Docker 包括三个基本概念：
    ```bash
    $ sudo apt-get install -y docker-ce-rootless-extras
    ```
-
-2. 修改 Docker 默认数据目录
+3. 修改环境变量
+   
+   修改环境变量可以使得用户可以通过ssh连接服务器并使用docker。如果想在本地链接上远程服务器的docker并使用。可以跳过这个部分，转到![配置本地使用远程 Docker 服务](https://github.com/mazhengcn/server-management/edit/main/docker.md#%E9%85%8D%E7%BD%AE%E6%9C%AC%E5%9C%B0%E4%BD%BF%E7%94%A8%E8%BF%9C%E7%A8%8B-docker-%E6%9C%8D%E5%8A%A1)。
+   
+   进入~/.bashrc中，添加环境变量。
+   ```bash
+   # set ebvironment variables
+   # 用vim打开.bashrc文件
+   $ vim ~/.bashrc
+   
+   # i 键进入编辑模式,在最后一行添加以下内容,注意这里的userid是自己的用户id,可以通过id -u查看
+   $ export DOCKER_HOST=unix:///run/user/userid/docker.sock
+   ```
+   
+4. 修改 Docker 默认数据目录
 
    当前，ZYLab 服务器上用户目录结构如下：
 
@@ -100,17 +113,11 @@ Docker 包括三个基本概念：
 
    ````
 
-3. 重启 Docker 服务使配置生效
+5. 重启 Docker 服务使配置生效
 
    完成上面配置后，我们需要启动 `Docker` 服务
 
    ```bash
-   # 启动服务
-   $ systemctl --user start docker
-
-   # 关闭服务
-   $ systemctl --user stop docker
-
    # 重启 Docker 服务
    $ systemctl --user restart docker
    ```
@@ -126,8 +133,6 @@ Docker 包括三个基本概念：
    ```bash
    $ docker pull [选项] [Docker Registry 地址[:端口号]/]仓库名[:标签]
    ```
-
-````
 
 具体的选项可以通过 `docker pull --help` 命令看到。
 
@@ -252,4 +257,4 @@ $ docker info
 - 打开 VSCode，按下 `ctrl+shift+p` 运行 `docker contexts use` , 选择上面创建的 docker context
 
 - 按下 `ctrl+shift+p` 运行 `Remote-Containers:Attach to Running Container...` 连接远程服务器中正在运行的容器
-````
+
